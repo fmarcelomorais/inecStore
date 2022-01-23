@@ -60,6 +60,7 @@ async function renderizar(){
                       <a href="#" class="btn btn-success mt-3">Baixar app</a>
                     </div>
                   </div>`
-                }})
+                }
+            })
                 document.querySelector(".apps").innerHTML = html
 }
