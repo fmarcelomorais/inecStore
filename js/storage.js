@@ -42,7 +42,6 @@ async function salvarUrl(nomeImagem){
 
 
 async function renderizar(){
-
     let dados = await db.collection('imagensApp')
     let info = await dados.get()
     let html = ""
@@ -54,7 +53,7 @@ async function renderizar(){
                     <div class="card-header">${x.data().nomeAluno}</div>
                     <div class="card-body">
                         <img class="card-img-top" style="height: 30%; width: 30%; margin: 0 auto;" src="${x.data().urlImage}" alt="Imagem de capa do card">
-                      <h5 class="card-title">${x.data().nomeAplicativo}</h5>
+                      <h5 class="card-title mt-3" >${x.data().nomeAplicativo}</h5>
                       <p class="card-text">${x.data().descricao}</p>
                       <hr>
                       <a href="#" class="btn btn-success mt-3">Baixar app</a>
@@ -62,5 +61,7 @@ async function renderizar(){
                   </div>`
                 }
             })
-                document.querySelector(".apps").innerHTML = html
+            
+        document.querySelector(".apps").innerHTML = html
+
 }
