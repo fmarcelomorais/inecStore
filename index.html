@@ -12,15 +12,21 @@
 </head>
   <body onload="renderizar()">
         <header class="container-fluid">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-                <a class="navbar-brand" href="index.html" onclick="renderizar()">Inec Store</a>
+            <nav class="navbar navbar-expand-sm navbar-dark bg-primary">
+              <a class="navbar-brand" href="index.html" onclick="renderizar()">
+                <img src="./image/logoInec.png" width="50" height="50" class="d-inline-block align-top" alt="">
+                
+              </a>  
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alterna navegação">
                   <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                   <ul class="navbar-nav">
                     <li class="nav-item active">
-                      <a class="nav-link" href="publicar.html">Publicar <span class="sr-only">(Página atual)</span></a>
+                      <a class="nav-link" href="index.html">Inicio<span class="sr-only">(Página atual)</span></a>
+                    </li>
+                    <li class="nav-item ">
+                      <a class="nav-link" href="publicar.html">Publicar</a>
                     </li>
                     <li class="nav-item">
                       <a class="nav-link" href="#">Sobre o LabInec</a>
@@ -85,10 +91,10 @@
             </div>
 
            
-        </main>
-        <footer class="container-fluid">
-            Desenvolvido por mim
-          </footer>
+          </main>
+          <footer class="container-fluid bg-primary">
+              <p class="m-3">Desenvolvido por Marcelo Morais - <strong>LabInec &copy 2022 </strong></p>
+            </footer>
 
 
           <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>

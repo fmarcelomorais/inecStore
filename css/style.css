@@ -1,7 +1,25 @@
 .apps{
+    
     display: flex;
-    flex-direction: row;
-    justify-content:space-between;
+    flex-direction: column;
+    justify-content:center;
     align-items: center;
+    align-content: center;
     flex-wrap: wrap;
+
+}
+
+footer{
+    display: flex;
+    justify-content:center;
+}
+
+footer p{
+    font-size: 1.5rem;
+    color: white;
+    font-weight: 300;
+}
+
+.card{
+    box-shadow: 5px 5px rgba(32, 32, 32, 0.2);
 }
