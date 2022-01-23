@@ -52,7 +52,7 @@ async function renderizar(){
        ` <div class="card text-white bg-primary mb-3" style="height: 10%; width: 90%;">
                     <div class="card-header">${x.data().nomeAluno}</div>
                     <div class="card-body">
-                        <img class="card-img-top" style="height: 30%; width: 30%; margin: 0 auto;" src="${x.data().urlImage}" alt="Imagem de capa do card">
+                        <img class="card-img-top mb-2" style="height: 30%; width: 30%; margin: 0 auto;" src="${x.data().urlImage}" alt="Imagem de capa do card">
                       <h5 class="card-title mt-3" >${x.data().nomeAplicativo}</h5>
                       <p class="card-text">${x.data().descricao}</p>
                       <hr>
@@ -61,7 +61,7 @@ async function renderizar(){
                   </div>`
                 }
             })
-            
+
         document.querySelector(".apps").innerHTML = html
 
 }
