@@ -41,8 +41,8 @@ async function salvarUrl(nomeImagem){
 }
 
 
-async function testes(){
-    
+async function renderizar(){
+
     let dados = await db.collection('imagensApp')
     let info = await dados.get()
     let html = ""
