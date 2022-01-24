@@ -31,13 +31,13 @@
                   <a class="nav-link" href="publicar.html">Publicar</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Sobre o LabInec</a>
+                  <a class="nav-link" href="sobre.html">Sobre o LabInec</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Professores</a>
+                  <a class="nav-link" href="professores.html">Professores</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Alunos</a>
+                  <a class="nav-link" href="alunos.html">Alunos</a>
                 </li>
               </ul>
             </div>
@@ -47,14 +47,50 @@
         <main class="container">
            <h1 class="mb-5">Publicar Seu Aplicativo</h1>
            <h2>Dados do Aplicativo</h2>
-           <form>
+
+           <form>            
+              <div class="col-auto mb-3">
+                <label for="validationDefault01">Seu nome</label>
+                <input type="text" class="form-control nome" name="nome" id="validationDefault01" placeholder=" Seu nome" required>
+              </div>
+              <div class="col-auto mb-3">
+                <label for="validationDefaultUsername">Nome do Aplicativo</label>
+                <div class="input-group">                  
+                  <input type="text" class="form-control app" name="app" id="validationDefaultUsername" placeholder="Nome do App" aria-describedby="inputGroupPrepend2" required>
+                </div>
+              </div>   
+              <div class="col-auto mb-3">
+                <label for="validationDefaultUsername">Logotipo do App</label>
+                <div class="input-group">                  
+                  <input type="file" class="form-control-file" id="imagem" onchange="carregarImagem(event)" required>
+                </div>
+              </div>    
+              <div class="col-auto mb-3">
+                <label for="validationDefaultUsername">Instalador .apk</label>
+                <div class="input-group">                  
+                  <input type="file" class="form-control-file" id="arquivo" onchange="carregarArquivo(event)" required/>
+                </div>
+              </div>                              
+              <div class="col-auto mb-3">
+                <label for="validationDefaultUsername">Descreva sobre o aplicativo</label>
+                <div class="input-group">                  
+                  <textarea class="form-control descricao" name="descricao" id="desvalidationDefault01cricao" placeholder="Descreva sobre seu app" required></textarea>
+                </div>
+              </div>                              
+            </div>
+          </form>
+          <button type="submit" class="btn btn-primary mb-2 ml-2" onclick="salvarNoStorage(nomeImagem, imagem, nomeArquivo, arquivo)" >Publicar</button>
+
+
+
+           <!-- <form>
             <div class="col-auto">
                 <label class="sr-only" for="inlineFormInputGroup">Usuário</label>
                 <div class="input-group mb-2">
                   <div class="input-group-prepend">
                     <div class="input-group-text">Seu nome</div>
                   </div>
-                  <input type="text" class="form-control" id="nome" placeholder="Seu nome" required>
+                  <input type="text" class="form-control nome" id="validationDefault01" placeholder="Seu nome" required>
                 </div>
               </div>         
 
@@ -64,13 +100,13 @@
                   <div class="input-group-prepend">
                     <div class="input-group-text">Nome do App</div>
                   </div>
-                  <input type="text" class="form-control" id="app" placeholder="Nome do aplicativo" required>
+                  <input type="text" class="form-control app" id="validationDefault01" placeholder="Nome do aplicativo" required>
                 </div>                
               </div>  
               
               <div class="mb-3">
                 <label for="Textarea">Fale sobre o seu aplicativo</label>
-                <textarea class="form-control" id="descricao" placeholder="Descreva sobre seu app" required></textarea>
+                <textarea class="form-control descricao" id="desvalidationDefault01cricao" placeholder="Descreva sobre seu app" required></textarea>
               </div>    
               <div class="form-group">
                 <label for="exampleFormControlFile1">Escolha a imagem do app</label>
@@ -78,14 +114,14 @@
               </div>          
               <div class="form-group">
                   <label for="exampleFormControlFile1">Escolha seu app</label>
-                  <input type="file" class="form-control-file" id="arquivo" onchange="carregarArquivo(event)" />
+                  <input type="file" class="form-control-file" id="arquivo" onchange="carregarArquivo(event)" required/>
                 </div>
             </form>
 
             <div >
               <button type="submit" class="btn btn-primary mb-2" onclick="salvarNoStorage(nomeImagem, imagem, nomeArquivo, arquivo)" >Enviar</button>
             </div>
-          </div>         
+          </div>          -->
         </main>
         <footer class="container-fluid bg-primary mt-5">
           <p class="m-3">Desenvolvido por Marcelo Morais - <strong>LabInec &copy 2022 </strong></p>
