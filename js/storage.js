@@ -28,44 +28,49 @@ function carregarArquivo(e){
 
 
 async function salvarNoStorage(nomeImagem, imagem, nomeArquivo, arquivo){
-    const $nome = document.querySelector('.nome')
-    const $app = document.querySelector('.app')
-    const $descricao = document.querySelector('.descricao')
+    if(document.querySelector('.nome').value == "" || document.querySelector('.app').value == "" || document.querySelector('.descricao').value == ""){
+        swal("ALERTA","Todos os campos precisam ser Preenchidos", "warning")
+    }else{
 
-
-    await reference.ref('imagens/').child(nomeImagem).put(imagem)
-    .then(() => swal("Salvo com Sucesso!", nomeImagem, "success"))
-    .catch(erro => console.log(erro))
- 
-    await reference.ref('imagens/').child(nomeImagem).getDownloadURL()
-     .then(url => {        
-         console.log(url)
-         urlImagem = url
-         //salvarUrlImagem(nomeImagem)
+        const $nome = document.querySelector('.nome')
+        const $app = document.querySelector('.app')
+        const $descricao = document.querySelector('.descricao')
+    
+    
+        await reference.ref('imagens/').child(nomeImagem).put(imagem)
+        .then(() => swal("Salvo com Sucesso!", nomeImagem, "success"))
+        .catch(erro => console.log(erro))
+     
+        await reference.ref('imagens/').child(nomeImagem).getDownloadURL()
+         .then(url => {        
+             console.log(url)
+             urlImagem = url
+             //salvarUrlImagem(nomeImagem)
+            })
+    
+        await reference.ref('aplicativos/').child(nomeArquivo).put(arquivo)
+         .then(() => swal("Salvo com Sucesso!", nomeArquivo, "success"))
+         .catch(erro => console.log(erro))
+    
+        await reference.ref('aplicativos/').child(nomeArquivo).getDownloadURL()
+        .then(url => {        
+            console.log(url)
+            urlArquivo = url
+            //salvarUrlArquivo(nomeArquivo)
+           })
+    
+           await db.collection('aplicativos').doc($nome.value).set({
+            nomeAluno: $nome.value,
+            nomeAplicativo: $app.value,
+            descricao: $descricao.value,
+            urlImage: urlImagem,
+            urlArquivoApp: urlArquivo
         })
-
-    await reference.ref('aplicativos/').child(nomeArquivo).put(arquivo)
-     .then(() => swal("Salvo com Sucesso!", nomeArquivo, "success"))
-     .catch(erro => console.log(erro))
-
-    await reference.ref('aplicativos/').child(nomeArquivo).getDownloadURL()
-    .then(url => {        
-        console.log(url)
-        urlArquivo = url
-        //salvarUrlArquivo(nomeArquivo)
-       })
-
-       await db.collection('aplicativos').doc($nome.value).set({
-        nomeAluno: $nome.value,
-        nomeAplicativo: $app.value,
-        descricao: $descricao.value,
-        urlImage: urlImagem,
-        urlArquivoApp: urlArquivo
-    })
-
-    document.querySelector('.nome').value = ""
-    document.querySelector('.app').value = ""
-    document.querySelector('.descricao').value = ""
+    
+        document.querySelector('.nome').value = ""
+        document.querySelector('.app').value = ""
+        document.querySelector('.descricao').value = ""
+    }
 
     renderizar()
 }
