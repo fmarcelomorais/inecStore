@@ -67,7 +67,7 @@ async function salvarNoStorage(nomeImagem, imagem, nomeArquivo, arquivo){
     document.querySelector('.app').value = ""
     document.querySelector('.descricao').value = ""
 
-
+    renderizar()
 }
 
 
@@ -80,8 +80,7 @@ async function renderizar(){
     
     info.forEach((app) =>{{            
             html +=
-            `
-            
+            `            
             <div class="card text-white bg-primary mb-3" style="height: 10%; width: 100%;">
             <div class="card-header">Aluno(a): <strong>${app.data().nomeAluno}</strong></div>
             <div class="card-body">
